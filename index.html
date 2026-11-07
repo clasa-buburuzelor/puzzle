@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#fff4dc">
+    <meta name="description" content="Puzzle-uri pentru clasa pregătitoare - învățăm să folosim mouse-ul">
+    <title>Puzzle digital</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <!-- ================= HOME SCREEN (PUZZLE LIST) ================= -->
+    <main id="home-screen" class="screen home">
+        <header class="home-header">
+            <div class="mascot" aria-hidden="true">🐞</div>
+            <div>
+                <h1>Hai la puzzle!</h1>
+                <p>Alege o poză și apasă pe ea</p>
+            </div>
+        </header>
+
+        <div id="progress-stars" class="progress-stars" aria-live="polite"></div>
+
+        <section id="puzzle-list" class="puzzle-list" aria-label="Puzzle-uri"></section>
+
+        <footer class="home-footer">
+            <button id="fullscreen-button" class="small-button" type="button" title="Ecran complet">
+                ⛶ Ecran complet
+            </button>
+            <button id="reset-button" class="small-button" type="button" title="Șterge bifele (pentru clasa următoare)">
+                ↺ Începe de la capăt
+            </button>
+        </footer>
+    </main>
+
+    <!-- ================= GAME SCREEN ================= -->
+    <main id="game-screen" class="screen game" hidden>
+        <header class="game-header">
+            <button id="home-button" class="big-button home-button" type="button" title="Înapoi la poze">
+                <span aria-hidden="true">🏠</span>
+            </button>
+
+            <div class="game-title">
+                <span id="game-name"></span>
+            </div>
+
+            <div class="header-tools">
+                <button id="preview-button" class="big-button" type="button" title="Vezi poza întreagă">
+                    <span aria-hidden="true">👁️</span>
+                </button>
+            </div>
+        </header>
+
+        <div id="table" class="table">
+            <canvas id="puzzle-canvas"></canvas>
+        </div>
+    </main>
+
+    <!-- Large image preview -->
+    <div id="preview-overlay" class="overlay preview-overlay" hidden>
+        <img id="preview-big" alt="Poza întreagă">
+        <p>Apasă oriunde ca să închizi</p>
+    </div>
+
+    <!-- Success message -->
+    <div id="success-overlay" class="overlay" hidden>
+        <div class="success-card">
+            <div class="success-stars" aria-hidden="true">⭐ 🌟 ⭐</div>
+            <h2>Bravo!</h2>
+            <p>Ai terminat puzzle-ul!</p>
+            <div class="success-buttons">
+                <button id="success-home" class="big-button pill" type="button">
+                    <span aria-hidden="true">🏠</span> Poze
+                </button>
+                <button id="success-next" class="big-button pill next" type="button">
+                    Următorul <span aria-hidden="true">▶</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div id="confetti" class="confetti" aria-hidden="true"></div>
+</body>
+</html>
